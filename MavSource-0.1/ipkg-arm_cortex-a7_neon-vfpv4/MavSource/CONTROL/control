@@ -1,0 +1,12 @@
+Package: MavSource
+Version: 0-r1
+Depends: libc, libpthread, libstdcpp6
+Source: feeds/base/MavSource
+SourceName: MavSource
+License: CC0-1.0
+Section: utils
+SourceDateEpoch: 1729769274
+Maintainer: Fehmi Yousfi <fehmi.yousfi@luceor.com>
+Architecture: arm_cortex-a7_neon-vfpv4
+Installed-Size: 30720
+Description:  Collector for PX4 Flight Controller multiple Serial Problem    
