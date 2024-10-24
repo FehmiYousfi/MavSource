@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "cssl.h": "c",
+        "libmavlink.h": "c",
+        "stdlib.h": "c"
+    }
+}
