@@ -1,0 +1,30 @@
+#!/bin/sh /etc/rc.common
+
+START=99
+STOP=10
+
+USE_PROCD=1
+SCRIPT=/etc/config/MAVRouterPorted/mavrunner.sh
+LOG_DIR=/var/log/mavrouter   
+STDOUT_LOG=$LOG_DIR/mavrouter.log
+STDERR_LOG=$LOG_DIR/mavrouter_err.log
+
+start_service() {
+
+    [ ! -d $LOG_DIR ] && mkdir -p $LOG_DIR
+    
+    procd_open_instance
+    procd_set_param command /bin/sh $SCRIPT
+    procd_set_param stdout 1
+    procd_set_param stderr 1
+    procd_set_param stdout_file $STDOUT_LOG
+    procd_set_param stderr_file $STDERR_LOG
+    procd_set_param respawn 
+    procd_set_param respawn_limit 0  
+    procd_close_instance
+}
+
+stop_service() {
+    echo "Stopping MAVRouter"
+}
+
