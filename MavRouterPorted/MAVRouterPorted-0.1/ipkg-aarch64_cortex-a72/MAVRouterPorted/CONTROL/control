@@ -1,0 +1,12 @@
+Package: MAVRouterPorted
+Version: 0-1
+Depends: libc, libpthread, libstdcpp6
+Source: package/MavRouterPorted
+SourceName: MAVRouterPorted
+License: CC0-1.0
+Section: utils
+SourceDateEpoch: 1729810875
+Maintainer: Fehmi Yousfi <fehmi.yousfi@luceor.com>
+Architecture: aarch64_cortex-a72
+Installed-Size: 158814
+Description:  a bridge for mavlink data from UART to UDP link on openwrt : test target BCM2711 
