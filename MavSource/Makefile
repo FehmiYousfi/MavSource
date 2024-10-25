@@ -43,7 +43,7 @@ define Build/Prepare
 endef
 
 define Build/Compile
-	$(MAKE) -C $(PKG_BUILD_DIR)/src CC=$(TARGET_CC) CXX=$(TARGET_CXX) 
+	$(MAKE) -C $(PKG_BUILD_DIR)/src CC=$(TARGET_CC) CXX=$(TARGET_CXX) CONF_PATH=/etc/config/mavconf.conf
 	cp $(PKG_BUILD_DIR)/src/MavSource  $(PKG_BUILD_DIR)/$(PKG_NAME)
 	
 endef
