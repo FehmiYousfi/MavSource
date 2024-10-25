@@ -17,6 +17,7 @@ start_service() {
     host_ip=$(uci get mavhost.host_ip)
     host_port=$(uci get mavhost.host_port)
     procd_open_instance
+    procd_set_param command MavSource >> $STDOUT_LOG 2>&1
     procd_set_param command MAVRouterPorted -c /etc/config/mavconf.conf -e $host_ip:$host_port >> $STDOUT_LOG 2>&1
     procd_set_param stdout 1
     procd_set_param stderr 1
