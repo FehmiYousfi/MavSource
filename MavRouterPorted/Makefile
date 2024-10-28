@@ -54,6 +54,13 @@ endef
 define Package/$(PKG_NAME)/install
 	$(INSTALL_DIR) $(1)/bin/
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/$(PKG_NAME) $(1)/bin/$(PKG_NAME)
+
+	$(INSTALL_DIR) $(1)/etc/mavconfig	
+	$(INSTALL_DIR) $(1)/etc/init.d
+	
+	$(INSTALL_BIN) files/etc/init.d/mavrouter $(1)/etc/init.d/mavrouter
+	$(INSTALL_DATA) files/etc/config/mavconf.conf $(1)/etc/mavconfig/mavconf.conf
 endef
 
 $(eval $(call BuildPackage,$(PKG_NAME),+libpthread,+libc,+libstdcpp))
+
