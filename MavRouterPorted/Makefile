@@ -18,7 +18,7 @@ define Package/$(PKG_NAME)
 	SECTION:=utils
 	CATEGORY:=Utilities
 	TITLE:= MavlinkBridge for advanced teleemtry purposes
-	DEPENDS:=+libc +libpthread +libstdcpp
+	DEPENDS:=+libc +libpthread +libstdcpp +kmod-usb-acm
 
 
 endef
